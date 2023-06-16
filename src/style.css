@@ -98,7 +98,7 @@ body {
 
 .content .tasks .task-section  {
   margin: 20px;
-  justify-items: center;
+  align-items: center;
 }
 
 .content .tasks .task-section button {
@@ -113,26 +113,20 @@ body {
   color: #555555;
 }
 
+/* campo das tarefas do dia e da noite */
 .content .tasks .task-section li {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  list-style-type: none;
+  flex-direction: column;
   font-size: 15px;
   color: #555555;
 }
 
 .content .tasks .task-section .task-item {
   display: flex;
-  flex-direction: column; /* Altere para column para posicionar os botões abaixo do texto */
-  align-items: center; /* Ajuste o alinhamento vertical conforme necessário */
+  flex-direction: column; 
+  align-items: center;
+  padding: 6px;
 }
-
-/* .content .tasks .task-section .task-item .edit-button,
-.content .tasks .task-section .task-item .delete-button {
-  /* display: inline-block; */
-  /* margin-left: 10px; /* Ajuste a margem entre os botões conforme necessário 
-}*/
 
 .content .tasks .task-section input {
   margin-bottom: 12px;
@@ -146,3 +140,6 @@ body {
   }
 }
 
+.edit-button {
+  margin-right: 8px;
+}
