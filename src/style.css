@@ -128,11 +128,11 @@ body {
   align-items: center; /* Ajuste o alinhamento vertical conforme necessário */
 }
 
-.content .tasks .task-section .task-item .edit-button,
+/* .content .tasks .task-section .task-item .edit-button,
 .content .tasks .task-section .task-item .delete-button {
-  display: inline-block;
-  margin-left: 10px; /* Ajuste a margem entre os botões conforme necessário */
-}
+  /* display: inline-block; */
+  /* margin-left: 10px; /* Ajuste a margem entre os botões conforme necessário 
+}*/
 
 .content .tasks .task-section input {
   margin-bottom: 12px;
