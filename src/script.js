@@ -1,48 +1,55 @@
 // Função para adicionar uma nova tarefa
 function addTask(period) {
-    const taskInput = document.getElementById(`${period}-task-input`);
-    const taskValue = taskInput.value.trim();
-    if (taskValue !== '') {
-      const taskList = document.getElementById(`${period}-tasks-list`);
-      const newTask = document.createElement("li");
-      newTask.classList.add("task-item");
+    const inputTarefa = document.getElementById(`${period}-task-input`);
+    const valueTarefa = inputTarefa.value.trim();
+    
+    if (valueTarefa !== '') {
+      const listaTarefas = document.getElementById(`${period}-tasks-list`);
+
+      const novaTarefa = document.createElement("li");
+      novaTarefa.className = "task-item";
       
-      const taskText = document.createElement("ul");
-      taskText.innerText = taskValue;
+      const textoTarefa = document.createElement("span");
+      textoTarefa.className = "task-text";
+      textoTarefa.textContent = valueTarefa;
+
+      const botoesTarefa = document.createElement('div');
+      botoesTarefa.className = 'task-buttons';
       
-      const editButton = document.createElement("button");
-      editButton.innerText = "Editar";
-      editButton.classList.add("task-button", "edit-button");
-      editButton.onclick = function () {
-        editTask(taskText);
+      const botaoEditar = document.createElement("button");
+      botaoEditar.textContent = "Editar";
+      botaoEditar.className = "edit-button";
+      botaoEditar.onclick = function () {
+        editarTarefa(textoTarefa);
       };
       
-      const deleteButton = document.createElement("button");
-      deleteButton.innerText = "Excluir";
-      deleteButton.classList.add("task-button","delete-button");
-      deleteButton.onclick = function () {
-        deleteTask(newTask);
+      const botaoDeletar = document.createElement("button");
+      botaoDeletar.textContent = "Excluir";
+      botaoDeletar.className = "delete-button";
+      botaoDeletar.onclick = function () {
+        deletarTarefa(novaTarefa);
       };
       
-      newTask.appendChild(taskText);
-      newTask.appendChild(editButton);
-      newTask.appendChild(deleteButton);
-      
-      taskList.appendChild(newTask);
-      taskInput.value = '';
+      novaTarefa.appendChild(textoTarefa);
+      botoesTarefa.appendChild(botaoEditar);
+      botoesTarefa.appendChild(botaoDeletar);
+      novaTarefa.appendChild(botoesTarefa);
+
+      listaTarefas.appendChild(novaTarefa);
+      inputTarefa.value = '';
     }
   }
   
   // Função para editar uma tarefa existente
-  function editTask(taskText) {
-    const newTaskInput = prompt("Digite a nova tarega:", taskText.innerText);
-    if (newTaskInput) {
-      taskText.innerText = newTaskInput;
+  function editarTarefa(textoTarefa) {
+    const tarefaEditada = prompt("Digite a nova tarega:", textoTarefa.textContent);
+    if (tarefaEditada) {
+      textoTarefa.textContent = tarefaEditada;
     }
   }
   
   // Função para excluir uma tarefa
-  function deleteTask(taskElement) {
-    taskElement.remove();
+  function deletarTarefa(tarefaADeletar) {
+    tarefaADeletar.remove();
   }
   
