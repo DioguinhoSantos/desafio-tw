@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   font-family: "Roboto", Arial, sans-serif;
   background-color: #b8524a;
-  justify-content:space-between;
+  /* justify-content: space-between; */
 }
 
 .container-menu-content {
@@ -59,18 +59,31 @@ body {
   color: #777777;
 }
 
+.links {
+  display: flex;
+  justify-content: center;
+}
+
 .menu .links ul {
   list-style-type: none;
-  padding: 0;
+  padding: 10;
+  width: 150px;
+  height: 50px;
 }
 
 .menu .links ul li {
+  background-color: rgb(255, 141, 141);
+  border: 1px solid rgb(182, 96, 96);
+  color: #fff;
   text-align: center;
-  margin-bottom: 10px;
+  padding: 1px;
+  margin: 3px;
+  border-radius: 5px;
 }
 
 .menu .links ul li a {
-  color: #555555;
+  background-color: rgb(255, 141, 141);
+  color: #fff;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
@@ -97,8 +110,14 @@ body {
 }
 
 .content .tasks .task-section  {
+  display: flex;
+  flex-direction: column;
   margin: 20px;
   align-items: center;
+  background-color: #d8a890;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 
 .content .tasks .task-section button {
@@ -110,12 +129,13 @@ body {
 .content .tasks .task-section h2 {
   margin-bottom: 10px;
   font-size: 18px;
-  color: #555555;
+  color: #333333;
 }
 
 /* campo das tarefas do dia e da noite */
 .content .tasks .task-section li {
   display: flex;
+  
   flex-direction: column;
   font-size: 15px;
   color: #555555;
@@ -131,6 +151,7 @@ body {
 .content .tasks .task-section input {
   margin-bottom: 12px;
   padding: 4px;
+  border-radius: 2px;
 }
 
 /* aqui pra poder deixar responsivo */
@@ -140,6 +161,52 @@ body {
   }
 }
 
-.edit-button {
-  margin-right: 8px;
+.add-button {
+  background-color: rgb(255, 141, 141);
+  border: 1px solid rgb(182, 96, 96);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+.edit-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: 2px solid #4caf50;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+.delete-button:active {
+  background-color: #990000;
+}
+
+.task-text {
+  display: flex;
+  color: black;
+  font-weight: bold;
+  border: 1px solid rgb(76, 112, 51);
+  background-color: #b4ee92;
+  justify-content: center;
+  width: 100px;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
